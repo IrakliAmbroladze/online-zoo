@@ -3,6 +3,10 @@
 .header {
   background-color: $color-background-primary;
   height: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
 
   .logo {
     width: 96px;
@@ -13,5 +17,31 @@
       height: 100%;
       object-fit: cover;
     }
+
   }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    height: 30px;
+    width: 30px;
+    justify-content: space-between;
+    margin-right: 17px;
+
+    div {
+      width: 30px;
+      height: 2px;
+      background-color: black;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    .nav {
+      display: none;
+    }
+  }
+
+
 }
