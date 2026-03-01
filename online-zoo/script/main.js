@@ -17,7 +17,7 @@ function setActiveNavLink() {
 
   const currentPath = normalize(window.location.pathname);
 
-  const links = document.querySelectorAll(".burger-nav a");
+  const links = document.querySelectorAll(".nav-link");
 
   links.forEach((link) => {
     const linkPath = normalize(new URL(link.href).pathname);
