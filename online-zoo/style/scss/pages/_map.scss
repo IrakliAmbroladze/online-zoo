@@ -1,7 +1,45 @@
+@use "../abstracts/" as *;
+
 .page-map {
   .main {
-    width: 500px;
-    background-color: red;
-    height: 500px;
+    .container {
+      @include flex-column-center;
+
+      h1 {
+        color: #20113D;
+        font-size: 26px;
+        text-align: center;
+        margin: 20px 10px 30px;
+        font-weight: 500;
+      }
+
+      .map {
+        width: 360px;
+        height: 234px;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        .animal-loc-1 {
+          position: absolute;
+          width: 40px;
+          height: 60px;
+          left: 40px;
+          top: 100px;
+        }
+
+        .animal-loc-2 {
+          position: absolute;
+          width: 35px;
+          height: 50px;
+          left: 65px;
+          top: 105px;
+        }
+      }
+    }
   }
 }
