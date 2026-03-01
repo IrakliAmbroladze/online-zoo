@@ -1,169 +1,176 @@
 @use "../abstracts" as *;
 
 .header {
+
   position: relative;
   background-color: $color-background-primary;
   height: 110px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 30px 20px;
 
-  .logo {
-    width: 96px;
-    height: 50px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-  }
-
-
-  .burger-menu {
+  .container {
     display: flex;
-    flex-direction: column;
-    height: 30px;
-    width: 22px;
     justify-content: space-between;
-    margin-right: 16px;
-    cursor: pointer;
+    align-items: center;
 
-    div {
-      height: 2px;
-      background-color: black;
+    .logo {
+      width: 96px;
+      height: 50px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
     }
-  }
 
-  .burger-modal {
-    display: none;
-  }
 
-  .burger-modal.show-burger-modal {
-    @include flex-row-center;
-    position: fixed;
-    right: 0;
-    top: 0;
-    background-color: $color-background-secondary;
-    z-index: 100;
-    height: 600px;
-    width: 233px;
-
-    .close-modal {
-      user-select: none;
-      position: absolute;
-      top: 40px;
-      right: 35px;
-      width: 30px;
+    .burger-menu {
+      display: flex;
+      flex-direction: column;
       height: 30px;
+      width: 22px;
+      justify-content: space-between;
+      margin-right: 16px;
       cursor: pointer;
 
-      .close-line-1,
-      .close-line-2 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        width: 30px;
+      div {
         height: 2px;
-        background-color: white;
-
-        transform-origin: center;
+        background-color: black;
       }
+    }
 
-      .close-line-1 {
-        transform: translate(-50%, -50%) rotate(45deg);
-      }
+    .burger-modal {
+      display: none;
+    }
 
-      .close-line-2 {
-        transform: translate(-50%, -50%) rotate(-45deg);
-      }
+    .burger-modal.show-burger-modal {
+      @include flex-row-center;
+      position: fixed;
+      right: 0;
+      top: 0;
+      background-color: $color-background-secondary;
+      z-index: 100;
+      height: 600px;
+      width: 233px;
 
-      &:hover {
+      .close-modal {
+        user-select: none;
+        position: absolute;
+        top: 40px;
+        right: 35px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
 
         .close-line-1,
         .close-line-2 {
-          background-color: tomato;
-          transition: background-color 0.2s ease;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+
+          width: 30px;
+          height: 2px;
+          background-color: white;
+
+          transform-origin: center;
         }
-      }
-    }
 
+        .close-line-1 {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
 
-    .burger-nav {
-      @include flex-column-center;
-      gap: 40px;
-
-      .nav-link {
-        color: white;
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 150%;
-        transition: color 0.2s ease;
-
-        &.highlight {
-          color: #00A092;
+        .close-line-2 {
+          transform: translate(-50%, -50%) rotate(-45deg);
         }
 
         &:hover {
-          color: yellowgreen;
+
+          .close-line-1,
+          .close-line-2 {
+            background-color: tomato;
+            transition: background-color 0.2s ease;
+          }
+        }
+      }
+
+
+      .burger-nav {
+        @include flex-column-center;
+        gap: 40px;
+
+        .nav-link {
+          color: white;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 150%;
+          transition: color 0.2s ease;
+
+          &.highlight {
+            color: #00A092;
+          }
+
+          &:hover {
+            color: yellowgreen;
+          }
+
+        }
+      }
+    }
+
+    .navigations-container {
+      display: none;
+
+      .nav {
+
+        .nav-link {
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 150%;
+          transition: color 0.2s ease;
         }
 
-      }
-    }
-  }
+        .nav-link.highlight {
+          color: #00A092;
+        }
 
-  .navigations-container {
-    display: none;
-
-    .nav {
-
-      .nav-link {
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 150%;
-        transition: color 0.2s ease;
+        .nav-link:hover {
+          color: yellowgreen;
+        }
       }
 
-      .nav-link.highlight {
-        color: #00A092;
+      .soc-media-container {
+        @include flex-row-center;
+        gap: 30px;
+        min-width: 180px;
       }
-
-      .nav-link:hover {
-        color: yellowgreen;
-      }
-    }
-
-    .soc-media-container {
-      @include flex-row-center;
-      gap: 30px;
-      min-width: 180px;
     }
   }
 }
 
 @media (min-width: 400px) {
   .header {
-    .burger-menu {
-      width: 30px;
-      margin-right: 27px;
-    }
+    .container {
 
-    .burger-modal.show-burger-modal {
-      height: 754px;
-      width: 311px;
-
-      .close-modal {
-        right: 45px;
+      .burger-menu {
+        width: 30px;
+        margin-right: 27px;
       }
-    }
 
-    .burger-nav {
-      gap: 50px;
+      .burger-modal.show-burger-modal {
+        height: 754px;
+        width: 311px;
+
+        .close-modal {
+          right: 45px;
+        }
+      }
+
+      .burger-nav {
+        gap: 50px;
+      }
     }
   }
 }
@@ -172,21 +179,23 @@
   .header {
     padding: 30px 100px;
 
-    .burger-menu {
-      display: none
-    }
+    .container {
+      .burger-menu {
+        display: none
+      }
 
-    .burger-modal.show-burger-modal {
-      display: none;
-    }
+      .burger-modal.show-burger-modal {
+        display: none;
+      }
 
-    .navigations-container {
-      @include flex-row-center;
-      gap: 80px;
-
-      .nav {
+      .navigations-container {
         @include flex-row-center;
-        gap: 30px;
+        gap: 80px;
+
+        .nav {
+          @include flex-row-center;
+          gap: 30px;
+        }
       }
     }
   }
@@ -195,8 +204,10 @@
 @media (min-width: 1440px) {
   .header {
 
-    .navigations-container {
-      gap: 65px;
+    .container {
+      .navigations-container {
+        gap: 65px;
+      }
     }
   }
 }
