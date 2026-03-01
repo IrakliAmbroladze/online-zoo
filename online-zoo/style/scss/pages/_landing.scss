@@ -182,7 +182,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 770px) {
   .page-landing {
     .main {
       padding-top: 0;
@@ -207,6 +207,27 @@
 
       }
     }
+
+    .welcome {
+      margin: 100px 100px;
+
+      .welcome-card-2 {
+        align-items: end;
+
+        .welcome-text-content {
+          padding-right: 100px
+        }
+      }
+
+      p {
+        max-width: 560px
+      }
+
+      .welcome-image {
+        width: 660px;
+      }
+    }
+
   }
 }
 
