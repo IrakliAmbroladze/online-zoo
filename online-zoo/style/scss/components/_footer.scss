@@ -55,6 +55,7 @@
         width: 100%;
         @include flex-row-center;
         justify-content: space-between;
+        max-width: 400px;
 
         .nav-link {
           text-transform: uppercase;
@@ -231,6 +232,36 @@
           @include flex-row-center;
           justify-content: start;
           gap: 50px;
+        }
+      }
+    }
+  }
+
+}
+
+@media(min-width: 1920px) {
+  .footer {
+    .container {
+      .upper-footer {
+        padding: 70px 0;
+
+
+        .logos {
+          gap: 65px;
+        }
+
+        .nav {
+          width: auto;
+          gap: 46px;
+        }
+
+      }
+
+      .down-footer {
+        padding: 44px 0;
+
+        .navigations-container {
+          order: 2;
         }
       }
     }
