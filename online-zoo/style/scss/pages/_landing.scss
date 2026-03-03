@@ -74,7 +74,7 @@
     }
 
     h2 {
-      color: $color-green;
+      color: $turquoise;
       width: 100%;
       font-weight: 600;
       font-size: 26px;
@@ -109,7 +109,7 @@
 
   .donation {
 
-    background-color: $color-background-secondary;
+    background-color: $navy;
 
     .container {
       @include flex-column-center;
