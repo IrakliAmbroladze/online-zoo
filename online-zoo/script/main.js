@@ -1,3 +1,4 @@
+import { slider } from "./utils/slider.js";
 async function loadComponent(selector, url) {
   const el = document.querySelector(selector);
   const res = await fetch(url);
@@ -28,3 +29,4 @@ function setActiveNavLink() {
 
 loadComponent("#header", "/components/header.html");
 loadComponent("#footer", "/components/footer.html");
+slider();
