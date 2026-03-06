@@ -7,4 +7,6 @@ export const slider = () => {
   right_arrow.addEventListener("click", () => {
     console.log("clicked on right arrow");
   });
+  const slider = document.getElementById("slider");
+  console.log("slider is: ", slider);
 };
