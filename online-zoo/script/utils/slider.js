@@ -5,11 +5,13 @@ export const slider = () => {
   const rect = slider.getBoundingClientRect();
   const slider_width = slider.offsetWidth;
   const xCoordinate = rect.left;
-  console.log("x: ", xCoordinate);
-  console.log("slider_width: ", slider_width);
   const container = document.getElementById("pets-container");
-  const viewport = container.offsetWidth - 80;
-  console.log("pest container width: ", viewport);
+  const viewport = container.offsetWidth - xCoordinate * 2; //deducting padding
+  const slider_overflow = slider_width - viewport;
+  const slider_styles = window.getComputedStyle(slider);
+  const gap = slider_styles.getPropertyValue("gap");
+  const gap_number = Number(gap.slice(0, -2));
+
   let counter = 0;
   const step_width = slider_width / 4;
   left_arrow.addEventListener("click", () => {
