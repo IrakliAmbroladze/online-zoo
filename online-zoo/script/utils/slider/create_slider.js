@@ -14,7 +14,8 @@ export const create_slider = ({
   });
 
   let offset = 0;
-  prev_btn.addEventListener("click", () => {
+
+  const moveLeft = () => {
     offset += step_width;
     const remaining_overflow = slider_overflow + offset;
     if (remaining_overflow > slider_overflow) {
@@ -23,8 +24,8 @@ export const create_slider = ({
       return;
     }
     slider.style.transform = `translateX(${offset}px)`;
-  });
-  next_btn.addEventListener("click", () => {
+  };
+  const moveRight = () => {
     offset -= step_width;
     const remaining_overflow = slider_overflow + offset;
     if (remaining_overflow < 0) {
@@ -33,5 +34,8 @@ export const create_slider = ({
       return;
     }
     slider.style.transform = `translateX(${offset}px)`;
-  });
+  };
+
+  prev_btn.addEventListener("click", moveLeft);
+  next_btn.addEventListener("click", moveRight);
 };
