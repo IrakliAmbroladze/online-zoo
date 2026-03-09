@@ -3,7 +3,7 @@ export const Header = () => {
     <header className="header">
       <div className="container">
         <a href="/" className="logo">
-          <img src="../assets/images/logo.svg" alt="logo" />
+          <img src="images/logo.svg" alt="logo" />
         </a>
         <div className="burger-menu">
           <div></div>
@@ -69,7 +69,7 @@ export const Header = () => {
             </li>
             <li>
               <a href="https://www.facebook.com" target="_blank">
-                <img src="../assets/icons/Facebook.svg" alt="Facebook" />
+                <img src="icons/Facebook.svg" alt="Facebook" />
               </a>
             </li>
           </ul>
