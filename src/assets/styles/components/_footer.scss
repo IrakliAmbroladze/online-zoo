@@ -1,0 +1,263 @@
+@use "../abstracts" as *;
+
+.footer {
+
+  background-color: $navy;
+
+  .container {
+    .upper-footer {
+
+      @include flex-column-center;
+      padding: 50px 10px 30px;
+      gap: 30px;
+
+      .logos {
+        @include flex-column-center;
+        gap: 30px;
+
+        .logo-zoo {
+          width: 96px;
+          height: 50px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .logo-yem {
+          width: 50px;
+          height: 50px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+        }
+
+        .logo-rs {
+          width: 138px;
+          height: 51px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+        }
+      }
+
+      .nav {
+        width: 100%;
+        @include flex-row-center;
+        justify-content: space-between;
+        max-width: 450px;
+
+        .nav-link {
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 100%;
+          color: white;
+          transition: color 0.2s ease;
+        }
+
+      }
+
+      .btn {
+        @include flex-row-center;
+        border: 1px solid white;
+        min-height: 45px;
+        max-width: 360px;
+        background-color: transparent;
+        color: white;
+        gap: 10px;
+
+        span {
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 150%;
+        }
+      }
+
+    }
+
+    .separator {
+      width: 100%;
+      height: 0px;
+      border: 1px solid white;
+    }
+
+    .down-footer {
+      @include flex-column-center;
+      padding: 30px 10px 50px;
+      gap: 30px;
+
+      .navigations-container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 30px;
+
+
+        .soc-media-container {
+          @include flex-row-center;
+          gap: 30px;
+          min-width: 180px;
+        }
+      }
+
+      .copyright {
+
+        width: 100%;
+        @include flex-column-center;
+        justify-content: space-between;
+
+        gap: 30px;
+
+        li {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 150%;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 640px) {
+  .footer {
+
+
+    .container {
+      .upper-footer {
+        padding: 50px 97px;
+        gap: 50px;
+
+        .logos {
+          @include flex-row-center;
+          gap: 80px;
+        }
+
+        .nav {
+          .nav-link {
+            font-size: 18px;
+          }
+        }
+
+        .btn {
+          min-height: 74px;
+          max-width: 360px;
+        }
+
+      }
+
+      .down-footer {
+        @include flex-column-center;
+        padding: 50px 96px;
+
+        .navigations-container {
+          .soc-media-container {
+            gap: 50px;
+            min-width: 180px;
+          }
+        }
+
+        .copyright {
+
+          @include flex-row-center;
+
+          li {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media(min-width: 1200px) {
+  .footer {
+    .container {
+      .upper-footer {
+        @include flex-row-center;
+        padding: 70px 40px;
+        justify-content: space-between;
+
+        gap: 35px;
+
+        .logos {
+          gap: 30px;
+        }
+
+        .nav {
+          width: auto;
+          gap: 20px;
+        }
+
+      }
+
+      .down-footer {
+        @include flex-row-center;
+        padding: 36px 40px;
+
+        .navigations-container {
+          order: 2;
+
+          .soc-media-container {
+            gap: 40px;
+            min-width: 200px;
+          }
+        }
+
+        .copyright {
+          order: 1;
+          @include flex-row-center;
+          justify-content: start;
+          gap: 50px;
+        }
+      }
+    }
+  }
+
+}
+
+@media(min-width: 1920px) {
+  .footer {
+    .container {
+      .upper-footer {
+        padding: 70px 0;
+
+
+        .logos {
+          gap: 65px;
+        }
+
+        .nav {
+          width: auto;
+          gap: 46px;
+        }
+
+      }
+
+      .down-footer {
+        padding: 44px 0;
+
+        .navigations-container {
+          order: 2;
+        }
+      }
+    }
+  }
+
+}
