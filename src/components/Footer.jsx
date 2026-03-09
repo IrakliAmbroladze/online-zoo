@@ -1,60 +1,60 @@
 export const Footer = () => {
   return (
-    <footer id="footer" class="footer">
-      <div class="container">
-        <div class="upper-footer">
-          <div class="logos">
-            <div class="logo-zoo">
-              <img src="../assets/images/logo-white.svg" alt="logo-white" />
+    <footer id="footer" className="footer">
+      <div className="container">
+        <div className="upper-footer">
+          <div className="logos">
+            <div className="logo-zoo">
+              <img src="images/logo-white.svg" alt="logo-white" />
             </div>
-            <div href="/" class="logo-yem">
-              <img src="../assets/images/yem.svg" alt="logo-yem" />
+            <div href="/" className="logo-yem">
+              <img src="images/yem.svg" alt="logo-yem" />
             </div>
-            <div href="/" class="logo-rs">
-              <img src="../assets/images/rs_school_js logo.svg" alt="logo-rs" />
+            <div href="/" className="logo-rs">
+              <img src="images/rs_school_js logo.svg" alt="logo-rs" />
             </div>
           </div>
-          <nav class="nav">
-            <a href="/" class="nav-link">
+          <nav className="nav">
+            <a href="/" className="nav-link">
               About
             </a>
-            <a href="/map" class="nav-link">
+            <a href="/map" className="nav-link">
               Map
             </a>
-            <a href="/zoos" class="nav-link">
+            <a href="/zoos" className="nav-link">
               Zoos
             </a>
-            <a href="/contact-us" class="nav-link">
+            <a href="/contact-us" className="nav-link">
               Contact us
             </a>
           </nav>
-          <button class="btn">
+          <button className="btn">
             <span>Donate for volunteers</span>
-            <img src="../assets/icons/arrow.svg" alt="arrow" />
+            <img src="icons/arrow.svg" alt="arrow" />
           </button>
         </div>
-        <div class="separator"></div>
-        <div class="down-footer">
-          <div class="navigations-container">
-            <ul class="soc-media-container">
+        <div className="separator"></div>
+        <div className="down-footer">
+          <div className="navigations-container">
+            <ul className="soc-media-container">
               <li>
                 <a href="https://www.youtube.com/" target="_blank">
-                  <img src="../assets/icons/YouTube.svg" alt="YouTube" />
+                  <img src="icons/YouTube.svg" alt="YouTube" />
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com" target="_blank">
-                  <img src="../assets/icons/Instagram.svg" alt="Instagram" />
+                  <img src="icons/Instagram.svg" alt="Instagram" />
                 </a>
               </li>
               <li>
                 <a href="https://www.facebook.com" target="_blank">
-                  <img src="../assets/icons/Facebook.svg" alt="Facebook" />
+                  <img src="icons/Facebook.svg" alt="Facebook" />
                 </a>
               </li>
             </ul>
           </div>
-          <ul class="copyright">
+          <ul className="copyright">
             <li>© 2021 DinaK</li>
             <li>© Yem Digital</li>
             <li>© RSSchool</li>
