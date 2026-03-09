@@ -59,12 +59,12 @@ export const Header = () => {
           <ul className="soc-media-container">
             <li>
               <a href="https://www.youtube.com/" target="_blank">
-                <img src="../assets/icons/YouTube.svg" alt="YouTube" />
+                <img src="icons/YouTube.svg" alt="YouTube" />
               </a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank">
-                <img src="../assets/icons/Instagram.svg" alt="Instagram" />
+                <img src="icons/Instagram.svg" alt="Instagram" />
               </a>
             </li>
             <li>
