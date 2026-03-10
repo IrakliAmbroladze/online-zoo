@@ -1,6 +1,10 @@
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Map from "./components/Map";
+import Zoos from "./components/Zoos";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
