@@ -1,0 +1,264 @@
+@use "../abstracts" as *;
+
+.meet-pets {
+  overflow: hidden;
+
+  .container {
+    padding: 50px 0;
+
+    @include flex-column-center;
+    gap: 30px;
+
+    .intro {
+      @include flex-column-center;
+      gap: 30px;
+
+      h2 {
+        color: $turquoise;
+        font-weight: 500;
+        font-size: 26px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: center;
+        padding: 0 10px;
+      }
+    }
+
+    .slider-arrows {
+      display: none;
+      gap: 55px;
+
+      transform: translateY(30px);
+
+      .left,
+      .right {
+        user-select: none;
+        cursor: pointer;
+
+        width: 60px;
+        height: 60px;
+
+        border: 1px solid $navy;
+        border-radius: 5px;
+
+        @include flex-row-center;
+        transition: background-color 200ms ease;
+      }
+
+      .left::before,
+      .right::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-color: $navy;
+
+        mask: url("../../../assets/icons/arrow.svg") center / contain no-repeat;
+        -webkit-mask: url("../../../assets/icons/arrow.svg") center / contain no-repeat;
+      }
+
+      .left {
+        transform: rotate(180deg);
+      }
+
+      .left:hover::before,
+      .right:hover::before {
+        background-color: white;
+      }
+
+      .left:hover,
+      .right:hover {
+        background-color: $navy;
+      }
+    }
+
+    .slider-pets-in-zoo {
+      @include flex-row-center;
+      gap: 20px;
+      align-self: self-start;
+      padding: 0 10px;
+
+      .animals-card {
+        position: relative;
+        cursor: pointer;
+
+        label {
+          @include flex-row-center;
+          position: absolute;
+          background-color: $navy;
+          padding: 12px 20px;
+          border-radius: 5px 0 0 0;
+          left: 0;
+        }
+
+        @include flex-column-center;
+        justify-content: space-between;
+        width: 300px;
+        height: 600px;
+        border-radius: 5px;
+        background-color: $navy;
+
+        color: white;
+        padding-bottom: 10px;
+
+        .cover {
+          height: 333px;
+          width: 100%;
+
+          img {
+            border-radius: 5px 5px 0 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .title {
+          font-weight: 500;
+          font-size: 26px;
+          line-height: 130%;
+          text-align: center;
+        }
+
+        p {
+          padding: 0 25px;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 150%;
+          text-align: center;
+        }
+
+        button {
+          width: 240px;
+          height: 73px;
+          transition: background-color 200ms ease;
+
+          span {
+            font-weight: 600;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-right: 10px
+          }
+        }
+
+        button:hover {
+          background-color: $orange;
+          color: white;
+        }
+
+      }
+    }
+
+    .btn-favorite {
+      display: none;
+      width: 400px;
+      height: 74px;
+      border: 1px solid $navy;
+      transition: background-color 0.2s ease;
+
+      span {
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-right: 10px
+      }
+    }
+
+    .btn-favorite:hover {
+      background-color: $navy;
+      color: white;
+    }
+  }
+}
+
+@media(min-width: 640px) {
+  .meet-pets {
+    .container {
+      padding: 100px 20px;
+      gap: 50px;
+
+      .intro {
+
+        h2 {
+          font-weight: 600;
+          font-size: 54px;
+          max-width: 394px;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 26px;
+          line-height: 130%;
+          padding: 0;
+        }
+      }
+
+      .slider-pets-in-zoo {
+        padding: 0;
+
+        .animals-card {
+          width: 290px;
+        }
+      }
+
+      .btn-favorite {
+        @include flex-row-center
+      }
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .meet-pets {
+    .container {
+      padding: 100px 40px 150px;
+      gap: 100px;
+
+      .intro {
+
+        h2 {
+          max-width: 100%
+        }
+      }
+
+
+      .slider-arrows {
+        @include flex-row-center;
+      }
+
+      .slider-pets-in-zoo {
+        --card-width: 495px;
+        display: grid;
+        grid-template-columns: var(--card-width) var(--card-width) var(--card-width) var(--card-width);
+        transition: transform 700ms ease;
+
+        .animals-card {
+          width: var(--card-width);
+          height: 716px;
+          padding-bottom: 35px;
+
+          .cover {
+            height: 436px;
+            width: 100%;
+          }
+
+
+          p {
+            padding: 0 30px;
+          }
+
+        }
+
+      }
+
+      .btn-favorite {
+        transform: translateX(20px);
+      }
+    }
+  }
+}

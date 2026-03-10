@@ -1,0 +1,323 @@
+@use "../abstracts/" as *;
+@use "../components/_button.scss";
+
+.page-landing {
+
+  .main {
+    position: relative;
+    padding-top: 395px;
+
+    .title-container {
+      position: absolute;
+      top: 0;
+      margin: 20px 10px 0;
+
+      h1 {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 40px;
+        color: #00A092;
+        letter-spacing: 1%;
+      }
+
+      h2 {
+        font-size: 18px;
+        line-height: 150%;
+        font-weight: 400;
+        margin: 20px 0 30px
+      }
+
+      button {
+        font-size: 18px;
+        height: 45px;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        img {
+          margin-left: 10px
+        }
+      }
+
+      button:hover {
+        @include shadow($orange);
+        background-color: $orange-dark;
+      }
+    }
+
+    .cover-image {
+      width: 100%;
+      height: 291px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 85% center;
+      }
+
+    }
+
+  }
+
+  .welcome {
+    margin: 50px 0;
+
+    .welcome-card-1,
+    .welcome-card-2 {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+
+      .welcome-image {
+        order: 1
+      }
+
+      .welcome-text-content {
+        order: 2;
+      }
+    }
+
+    h2 {
+      color: $turquoise;
+      width: 100%;
+      font-weight: 600;
+      font-size: 26px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    .welcome-text-content {
+      margin: 30px 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .welcome-image {
+      width: 100%;
+
+      height: 218px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .pay-and-feed {
+    background-color: $navy;
+    height: 500px;
+    margin: 20px 0;
+
+    h2 {
+      color: white;
+      text-transform: uppercase
+    }
+  }
+
+
+}
+
+@media (min-width: 600px) {
+  .page-landing {
+    .main {
+      padding-top: 257px;
+
+      .title-container {
+        margin: 50px 20px 0;
+
+        h1 {
+          font-size: 72px;
+        }
+
+        h2 {
+          margin: 30px 0 30px;
+          max-width: 339px
+        }
+
+        button {
+          font-size: 18px;
+          height: 74px;
+          width: 285px;
+        }
+      }
+
+      .cover-image {
+        height: 387px;
+        overflow: hidden;
+
+        img {
+          object-position: 65% center;
+        }
+
+      }
+    }
+
+    .welcome {
+      margin: 100px 0;
+
+      .welcome-card-1,
+      .welcome-card-2 {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+
+        .welcome-image {
+          order: 1
+        }
+
+        .welcome-text-content {
+          order: 2;
+        }
+      }
+
+      h2 {
+        width: 523px;
+        font-size: 54px;
+      }
+
+      .welcome-image {
+        width: 100%;
+
+        height: 438px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+
+  }
+}
+
+@media (min-width: 770px) {
+  .page-landing {
+    .main {
+      padding-top: 0;
+
+      .title-container {
+        margin: 100px 40px 0;
+
+        h1 {
+          max-width: 890px;
+          font-size: 82px;
+        }
+
+      }
+
+      .cover-image {
+        height: 725px;
+        overflow: hidden;
+
+        img {
+          object-position: 65% center;
+        }
+
+      }
+    }
+
+    .welcome {
+      margin: 100px 100px;
+
+      .welcome-card-2 {
+        align-items: end;
+
+        .welcome-text-content {
+          padding-right: 100px
+        }
+      }
+
+      p {
+        max-width: 560px
+      }
+
+      .welcome-image {
+        width: 660px;
+      }
+    }
+
+
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-landing {
+    .main {
+      padding-top: 0;
+
+      .title-container {
+        margin: 130px 0 0;
+
+        h1 {
+          max-width: 890px;
+          font-size: 82px;
+        }
+
+        h2 {
+          max-width: 430px;
+        }
+
+      }
+
+      .cover-image {
+        height: 725px;
+        overflow: hidden;
+
+        img {
+          object-position: 65% center;
+        }
+
+      }
+    }
+
+    .welcome {
+      margin: 150px;
+
+      .welcome-card-1,
+      .welcome-card-2 {
+        @include flex-row-center;
+        justify-content: space-between;
+
+      }
+
+      .welcome-card-1 {
+
+        .welcome-image {
+          order: 2;
+        }
+
+        .welcome-text-content {
+          order: 1;
+        }
+
+      }
+
+      .welcome-card-2 {
+        margin-top: 150px;
+
+        .welcome-text-content {
+          padding: 0
+        }
+      }
+
+      .welcome-image {
+        width: 800px;
+        height: 531px;
+
+      }
+    }
+
+
+  }
+}
