@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <>
+    <div className="page-landing">
       <main className="main">
         <div className="container">
           <div className="title-container">
@@ -217,7 +217,7 @@ const Home = () => {
       <section className="pay-and-feed">
         <h2>Pay and feed</h2>
       </section>
-    </>
+    </div>
   );
 };
 
