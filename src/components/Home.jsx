@@ -10,12 +10,12 @@ const Home = () => {
               natural setting without leaving your home.
             </h2>
             <button className="btn btn--orange">
-              view live cam <img src="./assets/icons/arrow.svg" alt="arrow" />
+              view live cam <img src="icons/arrow.svg" alt="arrow" />
             </button>
           </div>
         </div>
         <div className="cover-image">
-          <img src="./assets/images/Background.jpg" alt="" />
+          <img src="images/Background.jpg" alt="" />
         </div>
       </main>
       <section className="welcome">
@@ -34,7 +34,7 @@ const Home = () => {
               </p>
             </div>
             <div className="welcome-image">
-              <img src="./assets/images/welcome.jpg" alt="welcome" />
+              <img src="images/welcome.jpg" alt="welcome" />
             </div>
           </div>
           <div className="welcome-card-2">
@@ -49,7 +49,7 @@ const Home = () => {
               </p>
             </div>
             <div className="welcome-image">
-              <img src="./assets/images/how_it_works.jpg" alt="how_it_works" />
+              <img src="images/how_it_works.jpg" alt="how_it_works" />
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ const Home = () => {
             <div className="amount">
               <span className="donation-amount">$ Donation Amount</span>
               <button className="btn btn--orange">
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
           </div>
@@ -93,7 +93,7 @@ const Home = () => {
             <div className="animals-card">
               <label>Liz</label>
               <div className="cover">
-                <img src="./assets/images/koala.png" alt="koala" />
+                <img src="images/koala.png" alt="koala" />
               </div>
               <div className="title">Australian Koala</div>
               <p>
@@ -102,13 +102,13 @@ const Home = () => {
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
             <div className="animals-card">
               <label>Shake</label>
               <div className="cover">
-                <img src="./assets/images/lion.png" alt="lion" />
+                <img src="images/lion.png" alt="lion" />
               </div>
               <div className="title">African Lion</div>
               <p>
@@ -117,25 +117,25 @@ const Home = () => {
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
             <div className="animals-card">
               <label>Senja</label>
               <div className="cover">
-                <img src="./assets/images/tiger.png" alt="tiger" />
+                <img src="images/tiger.png" alt="tiger" />
               </div>
               <div className="title">Sumatran Tiger</div>
               <p>Sumatran Tigers are the smallest of the five sub-species.</p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
             <div className="animals-card">
               <label>Sam & Lora</label>
               <div className="cover">
-                <img src="./assets/images/eagles.png" alt="eagles" />
+                <img src="images/eagles.png" alt="eagles" />
               </div>
               <div className="title">West End Bald Eagles</div>
               <p>
@@ -144,13 +144,13 @@ const Home = () => {
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
             <div className="animals-card">
               <label>Andy</label>
               <div className="cover">
-                <img src="./assets/images/lemur.png" alt="lemur" />
+                <img src="images/lemur.png" alt="lemur" />
               </div>
               <div className="title">Australian Koala</div>
               <p>
@@ -159,13 +159,13 @@ const Home = () => {
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
             <div className="animals-card">
               <label>Glen</label>
               <div className="cover">
-                <img src="./assets/images/gorilla.png" alt="gorilla" />
+                <img src="images/gorilla.png" alt="gorilla" />
               </div>
               <div className="title">Gorilla in Congo</div>
               <p>
@@ -174,13 +174,13 @@ const Home = () => {
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
             <div className="animals-card">
               <label>Mike</label>
               <div className="cover">
-                <img src="./assets/images/alligator.png" alt="alligator" />
+                <img src="images/alligator.png" alt="alligator" />
               </div>
               <div className="title">Chinese Alligator</div>
               <p>
@@ -189,13 +189,13 @@ const Home = () => {
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
             <div className="animals-card">
               <label>Lucas</label>
               <div className="cover">
-                <img src="./assets/images/panda.png" alt="panda" />
+                <img src="images/panda.png" alt="panda" />
               </div>
               <div className="title">Giant Panda</div>
               <p>
@@ -204,13 +204,13 @@ const Home = () => {
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
-                <img src="./assets/icons/arrow.svg" alt="arrow" />
+                <img src="icons/arrow.svg" alt="arrow" />
               </button>
             </div>
           </div>
           <button className="btn btn--font-navy btn-favorite">
             <span>choose your favorite</span>
-            <img src="./assets/icons/arrow.svg" alt="arrow" />
+            <img src="icons/arrow.svg" alt="arrow" />
           </button>
         </div>
       </section>
