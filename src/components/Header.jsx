@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Header = () => {
   return (
     <header className="header">
@@ -16,48 +18,48 @@ export const Header = () => {
             <div className="close-line-2"></div>
           </div>
           <nav className="burger-nav">
-            <a href="/" className="nav-link">
+            <Link to="/" className="nav-link">
               About
-            </a>
-            <a href="/map/" className="nav-link">
+            </Link>
+            <Link to="/map/" className="nav-link">
               Map
-            </a>
-            <a href="/zoos/" className="nav-link">
+            </Link>
+            <Link to="/zoos/" className="nav-link">
               Zoos
-            </a>
-            <a href="/contact-us/" className="nav-link">
+            </Link>
+            <Link to="/contact-us/" className="nav-link">
               Contact us
-            </a>
-            <a
-              href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=uVdleYXKyMAVDa9i-0"
+            </Link>
+            <Link
+              to="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=uVdleYXKyMAVDa9i-0"
               className="nav-link"
               target="_blank"
             >
               Design
-            </a>
+            </Link>
           </nav>
         </div>
         <div className="navigations-container">
           <nav className="nav">
-            <a href="/" className="nav-link">
+            <Link to="/" className="nav-link">
               About
-            </a>
-            <a href="/map/" className="nav-link">
+            </Link>
+            <Link to="/map/" className="nav-link">
               Map
-            </a>
-            <a href="/zoos/" className="nav-link">
+            </Link>
+            <Link to="/zoos/" className="nav-link">
               Zoos
-            </a>
-            <a href="/contact-us/" className="nav-link">
+            </Link>
+            <Link to="/contact-us/" className="nav-link">
               Contact us
-            </a>
-            <a
-              href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=uVdleYXKyMAVDa9i-0"
+            </Link>
+            <Link
+              to="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=21-4877&t=uVdleYXKyMAVDa9i-0"
               className="nav-link"
               target="_blank"
             >
               Design
-            </a>
+            </Link>
           </nav>
           <ul className="soc-media-container">
             <li>
