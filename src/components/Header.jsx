@@ -1,22 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 export const Header = () => {
   const [burgerIsOpen, setBurgerIsOpen] = useState(false);
-  function setActiveNavLink() {
-    const normalize = (path) => path.replace(/\/$/, "") || "/";
-
-    const currentPath = normalize(window.location.pathname);
-
-    const links = document.querySelectorAll(".nav-link");
-
-    links.forEach((link) => {
-      const linkPath = normalize(new URL(link.href).pathname);
-
-      link.classList.toggle("highlight", linkPath === currentPath);
-    });
-  }
-  console.log("Burger menue is open", burgerIsOpen);
+  const { pathname } = useLocation();
+  const normalize = (path) => path.replace(/\/$/, "") || "/";
+  const currentPath = normalize(pathname);
   const toggleBurgerMenu = () => setBurgerIsOpen((prev) => !prev);
   return (
     <header className="header">
@@ -35,16 +24,28 @@ export const Header = () => {
             <div className="close-line-2"></div>
           </div>
           <nav className="burger-nav">
-            <Link to="/" className="nav-link">
+            <Link
+              to="/"
+              className={`nav-link ${currentPath === "/" && "highlight"}`}
+            >
               About
             </Link>
-            <Link to="/map/" className="nav-link">
+            <Link
+              to="/map"
+              className={`nav-link ${currentPath === "/map" && "highlight"}`}
+            >
               Map
             </Link>
-            <Link to="/zoos/" className="nav-link">
+            <Link
+              to="/zoos"
+              className={`nav-link ${currentPath === "/zoos" && "highlight"}`}
+            >
               Zoos
             </Link>
-            <Link to="/contact-us/" className="nav-link">
+            <Link
+              to="/contact-us"
+              className={`nav-link ${currentPath === "/contact-us" && "highlight"}`}
+            >
               Contact us
             </Link>
             <Link
@@ -58,16 +59,28 @@ export const Header = () => {
         </div>
         <div className="navigations-container">
           <nav className="nav">
-            <Link to="/" className="nav-link">
+            <Link
+              to="/"
+              className={`nav-link ${currentPath === "/" && "highlight"}`}
+            >
               About
             </Link>
-            <Link to="/map/" className="nav-link">
+            <Link
+              to="/map"
+              className={`nav-link ${currentPath === "/map" && "highlight"}`}
+            >
               Map
             </Link>
-            <Link to="/zoos/" className="nav-link">
+            <Link
+              to="/zoos"
+              className={`nav-link ${currentPath === "/zoos" && "highlight"}`}
+            >
               Zoos
             </Link>
-            <Link to="/contact-us/" className="nav-link">
+            <Link
+              to="/contact-us"
+              className={`nav-link ${currentPath === "/contact-us" && "highlight"}`}
+            >
               Contact us
             </Link>
             <Link
