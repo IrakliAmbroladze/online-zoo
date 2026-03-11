@@ -1,19 +1,36 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
+  const [burgerIsOpen, setBurgerIsOpen] = useState(false);
+  function setActiveNavLink() {
+    const normalize = (path) => path.replace(/\/$/, "") || "/";
+
+    const currentPath = normalize(window.location.pathname);
+
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach((link) => {
+      const linkPath = normalize(new URL(link.href).pathname);
+
+      link.classList.toggle("highlight", linkPath === currentPath);
+    });
+  }
+  console.log("Burger menue is open", burgerIsOpen);
+  const toggleBurgerMenu = () => setBurgerIsOpen((prev) => !prev);
   return (
     <header className="header">
       <div className="container">
         <a href="/" className="logo">
           <img src="images/logo.svg" alt="logo" />
         </a>
-        <div className="burger-menu">
+        <div className="burger-menu" onClick={toggleBurgerMenu}>
           <div></div>
           <div></div>
           <div></div>
         </div>
-        <div className="burger-modal">
-          <div className="close-modal">
+        <div className={`${burgerIsOpen && "show-burger-modal"} burger-modal`}>
+          <div className="close-modal" onClick={toggleBurgerMenu}>
             <div className="close-line-1"></div>
             <div className="close-line-2"></div>
           </div>
