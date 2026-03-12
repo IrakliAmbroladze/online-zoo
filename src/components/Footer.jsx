@@ -1,17 +1,23 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   return (
     <footer id="footer" className="footer">
       <div className="container">
         <div className="upper-footer">
           <div className="logos">
+            <Link
+              to="https://geolab.edu.ge/"
+              className="logo-geolab"
+              target="_blank"
+            >
+              <img src="images/geolab.svg" alt="logo-rs" />
+            </Link>
             <div className="logo-zoo">
               <img src="images/logo-white.svg" alt="logo-white" />
             </div>
             <div href="/" className="logo-yem">
               <img src="images/yem.svg" alt="logo-yem" />
-            </div>
-            <div href="/" className="logo-rs">
-              <img src="images/rs_school_js logo.svg" alt="logo-rs" />
             </div>
           </div>
           <nav className="nav">
@@ -57,7 +63,6 @@ export const Footer = () => {
           <ul className="copyright">
             <li>© 2021 DinaK</li>
             <li>© Yem Digital</li>
-            <li>© RSSchool</li>
           </ul>
         </div>
       </div>
