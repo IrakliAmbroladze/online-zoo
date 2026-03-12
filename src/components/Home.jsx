@@ -1,4 +1,50 @@
+import { useState, useRef } from "react";
+
+const getSliderMetrics = (sliderRef, viewportRef, cardSelector) => {
+  if (!sliderRef.current || !viewportRef.current) return null;
+
+  const slider = sliderRef.current;
+  const viewport = viewportRef.current.offsetWidth;
+  const sliderWidth = slider.offsetWidth;
+  const gap = parseFloat(
+    window.getComputedStyle(slider).getPropertyValue("gap"),
+  );
+  const card = slider.querySelector(cardSelector);
+  const cardWidth = card ? card.offsetWidth : 0;
+
+  return {
+    sliderOverflow: sliderWidth - viewport,
+    stepWidth: cardWidth + gap,
+  };
+};
+
 const Home = () => {
+  const [offset, setOffset] = useState(0);
+  const sliderRef = useRef(null);
+  const viewportRef = useRef(null);
+
+  const moveLeft = () => {
+    const metrics = getSliderMetrics(sliderRef, viewportRef, ".animals-card");
+    if (!metrics) return;
+    const { sliderOverflow, stepWidth } = metrics;
+
+    setOffset((prev) => {
+      const next = prev + stepWidth;
+      return sliderOverflow + next > sliderOverflow ? 0 : next;
+    });
+  };
+
+  const moveRight = () => {
+    const metrics = getSliderMetrics(sliderRef, viewportRef, ".animals-card");
+    if (!metrics) return;
+    const { sliderOverflow, stepWidth } = metrics;
+
+    setOffset((prev) => {
+      const next = prev - stepWidth;
+      return sliderOverflow + next < 0 ? -sliderOverflow : next;
+    });
+  };
+
   return (
     <div className="page-landing">
       <main className="main">
@@ -28,7 +74,7 @@ const Home = () => {
                 various animals. Among them, are Giant pandas, eagles,
                 alligators, forest gorillas, African lions, and others. It is
                 the whole natural world in real-time in front of our cameras. We
-                hope you will enjoy watching closely and explore animals’
+                hope you will enjoy watching closely and explore animals'
                 behavior and habitats! Note: animals are not always on view on
                 cameras, so please check back if you don't see anything.
               </p>
@@ -75,7 +121,7 @@ const Home = () => {
         </div>
       </section>
       <section className="meet-pets">
-        <div className="container" id="pets-container">
+        <div className="container" id="pets-container" ref={viewportRef}>
           <div className="intro">
             <h2>Meet some our pets</h2>
             <p>
@@ -86,10 +132,21 @@ const Home = () => {
             </p>
           </div>
           <div className="slider-arrows">
-            <div className="left" id="sldr_left_arr"></div>
-            <div className="right" id="sldr_right_arr"></div>
+            <div className="left" id="sldr_left_arr" onClick={moveLeft}></div>
+            <div
+              className="right"
+              id="sldr_right_arr"
+              onClick={moveRight}
+            ></div>
           </div>
-          <div className="slider-pets-in-zoo" id="slider">
+          <div
+            className="slider-pets-in-zoo"
+            id="slider"
+            ref={sliderRef}
+            style={{
+              transform: offset === 0 ? "none" : `translateX(${offset}px)`,
+            }}
+          >
             <div className="animals-card">
               <label>Liz</label>
               <div className="cover">
@@ -98,7 +155,7 @@ const Home = () => {
               <div className="title">Australian Koala</div>
               <p>
                 The elevated walkways bring you to eye level with the koalas as
-                they perch in their forest.
+                they perch in their forest.
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
@@ -155,7 +212,7 @@ const Home = () => {
               <div className="title">Australian Koala</div>
               <p>
                 The elevated walkways bring you to eye level with the koalas as
-                they perch  in their forest.
+                they perch in their forest.
               </p>
               <button className="btn btn--pure-text-orange">
                 <span>view live cam</span>
