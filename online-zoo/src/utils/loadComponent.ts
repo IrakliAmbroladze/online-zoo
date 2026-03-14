@@ -1,18 +1,21 @@
+import { createModal } from "./createModal";
+
 export async function loadComponent(selector: string, url: string) {
   const el = document.querySelector(selector);
   const res = await fetch(url);
   if (el !== null) {
     el.innerHTML = await res.text();
-    el.querySelector(".burger-menu")?.addEventListener("click", toggleMenu);
-    el.querySelector(".close-modal")?.addEventListener("click", toggleMenu);
+    createModal({
+      triggerSelector: ".burger-menu",
+      closeSelector: ".close-modal",
+      modalSelector: "#header .burger-modal",
+      activeClass: "show-burger-modal",
+      scope: el,
+    });
   }
   setActiveNavLink();
 }
 
-function toggleMenu() {
-  const modal = document.querySelector("#header .burger-modal");
-  modal?.classList.toggle("show-burger-modal");
-}
 function setActiveNavLink() {
   const normalize = (path: string) => path.replace(/\/$/, "") || "/";
 

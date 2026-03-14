@@ -1,6 +1,6 @@
 interface ModalOptions {
   triggerSelector: string;
-  closeSelector: string;
+  closeSelector?: string;
   modalSelector: string;
   activeClass: string;
   scope?: Element | Document;
@@ -21,11 +21,9 @@ export function createModal({
   const close = () => modal.classList.remove(activeClass);
 
   scope.querySelector(triggerSelector)?.addEventListener("click", toggle);
-  scope.querySelector(closeSelector)?.addEventListener("click", close);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) close();
-  });
+  if (closeSelector) {
+    scope.querySelector(closeSelector)?.addEventListener("click", close);
+  }
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") close();

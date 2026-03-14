@@ -29,13 +29,58 @@
 
       gap: 30px;
 
-      .user {
-        cursor: pointer;
-        user-select: none;
-        @include flex-column-center;
+      .user-container {
 
-        .user-name {
-          text-align: center
+        position: relative;
+
+        .user {
+          cursor: pointer;
+          user-select: none;
+          @include flex-column-center;
+
+          .user-name {
+            text-align: center
+          }
+
+        }
+
+        .user-modal {
+          display: none;
+        }
+
+        .user-modal.show-user-modal {
+          @include flex-row-center;
+          gap: 20px;
+          position: absolute;
+          right: 0;
+          top: 80px;
+          background-color: $white;
+          z-index: 100;
+          border-radius: 8px;
+          height: 100px;
+          width: 233px;
+
+          button {
+            height: 50px;
+            width: 70px;
+            color: white;
+            border-radius: 4px;
+            transition: transform 150ms ease-in-out;
+            cursor: pointer;
+            user-select: none;
+          }
+
+          .sign-in {
+            background-color: $orange
+          }
+
+          button:active {
+            transform: scale(0.9);
+          }
+
+          .register {
+            background-color: $navy
+          }
         }
       }
 
