@@ -1,4 +1,4 @@
-export const Header = () => {
+export const Header = (): void => {
   const usernameEl = document.getElementById("user-name");
   if (!usernameEl) return;
   const username = "Irakli";
