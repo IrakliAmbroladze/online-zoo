@@ -6,6 +6,5 @@ export const Header = () => {
   if (isLoggedIn) {
     usernameEl.innerHTML = username;
   }
-  console.log("user name element is", usernameEl);
   return;
 };
