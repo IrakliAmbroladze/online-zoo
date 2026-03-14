@@ -1,5 +1,4 @@
 import App from "./App";
-import { Header } from "./components/Header";
 import { create_slider } from "./utils/slider/create_slider";
 
 async function loadComponent(selector: string, url: string) {
@@ -31,12 +30,6 @@ function setActiveNavLink() {
   });
 }
 
-async function init() {
-  await loadComponent("#header", "/components/header.html");
-  await loadComponent("#footer", "/components/footer.html");
-  Header();
-}
-init();
 const left_arrow = document.getElementById("sldr_left_arr");
 const right_arrow = document.getElementById("sldr_right_arr");
 const slider_container = document.getElementById("slider");
@@ -51,4 +44,17 @@ create_slider({
   cardSelector: ".animals-card",
 });
 
-App();
+async function main() {
+  try {
+    await loadComponent("#header", "/components/header.html");
+    await loadComponent("#footer", "/components/footer.html");
+    App();
+  } catch (err) {
+    if (err instanceof Error) {
+      console.error("Caught an Error object:", err.message);
+    } else {
+      console.error("Caught an unknown error type:", err);
+    }
+  }
+}
+main();
