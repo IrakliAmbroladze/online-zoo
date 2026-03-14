@@ -36,6 +36,7 @@
         .user {
           cursor: pointer;
           user-select: none;
+          height: 50px;
           @include flex-column-center;
 
           .user-name {
@@ -50,36 +51,39 @@
 
         .user-modal.show-user-modal {
           @include flex-row-center;
-          gap: 20px;
           position: absolute;
           right: 0;
           top: 80px;
           background-color: $white;
           z-index: 100;
           border-radius: 8px;
-          height: 100px;
-          width: 233px;
+          padding: 20px 30px;
 
-          button {
-            height: 50px;
-            width: 70px;
-            color: white;
-            border-radius: 4px;
-            transition: transform 150ms ease-in-out;
-            cursor: pointer;
-            user-select: none;
-          }
+          .logged-in {
+            @include flex-row-center;
+            gap: 10px;
 
-          .sign-in {
-            background-color: $orange
-          }
+            button {
+              height: 50px;
+              width: 70px;
+              color: white;
+              border-radius: 4px;
+              transition: transform 150ms ease-in-out;
+              cursor: pointer;
+              user-select: none;
+            }
 
-          button:active {
-            transform: scale(0.9);
-          }
+            .sign-in {
+              background-color: $orange
+            }
 
-          .register {
-            background-color: $navy
+            button:active {
+              transform: scale(0.9);
+            }
+
+            .register {
+              background-color: $navy
+            }
           }
         }
       }

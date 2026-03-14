@@ -19,5 +19,13 @@ export const Header = (): void => {
     modalSelector: "#user-modal",
     activeClass: "show-user-modal",
   });
-  return;
+  const loggedIn = document.querySelector<HTMLElement>(
+    "#user-modal .logged-in",
+  );
+  const notLoggedIn = document.querySelector<HTMLElement>(
+    "#user-modal .non-logged-in",
+  );
+
+  if (loggedIn) loggedIn.style.display = isLoggedIn ? "flex" : "none";
+  if (notLoggedIn) notLoggedIn.style.display = isLoggedIn ? "none" : "flex";
 };
