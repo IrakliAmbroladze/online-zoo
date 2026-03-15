@@ -1,15 +1,33 @@
 import { Feedbacks } from "./components/Feedbacks";
 import { Header } from "./components/Header";
 import { MeetPets } from "./components/MeetPets";
-import { user } from "./constants/user";
+import { createForm } from "./utils/createForm";
+// import { user } from "./constants/user";
 import { create_slider } from "./utils/slider/create_slider";
 
 export default async function App() {
-  Header({ user });
-  await MeetPets();
-  await Feedbacks();
-  initPetsSlider();
-  initFeedbackSlider();
+  Header({ user: null });
+
+  const page = document.body.className;
+
+  if (page === "page-landing") {
+    try {
+      await MeetPets();
+    } catch (e) {
+      console.error(e);
+    }
+    try {
+      await Feedbacks();
+    } catch (e) {
+      console.error(e);
+    }
+    initPetsSlider();
+    initFeedbackSlider();
+  }
+
+  if (page === "page-registration") {
+    createForm();
+  }
 }
 
 function initPetsSlider() {
