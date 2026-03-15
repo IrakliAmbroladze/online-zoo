@@ -40,6 +40,10 @@ export const createForm = ({
   form.appendChild(btnSubmit);
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log(getFormFieldValue({ form, name: "email" }));
+    const body: Record<string, string> = {};
+    inputs.forEach((input) => {
+      body[input.name] = getFormFieldValue({ form, name: input.name });
+    });
+    console.log("body is: ", body);
   });
 };
