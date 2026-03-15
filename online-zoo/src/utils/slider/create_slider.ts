@@ -1,4 +1,12 @@
-import { calculate_metrics } from "./calculate_metrics.js";
+import { calculate_metrics } from "./calculate_metrics";
+
+type CreateSliderProps = {
+  prev_btn: HTMLElement;
+  next_btn: HTMLElement;
+  slider: HTMLElement;
+  viewport: number;
+  cardSelector: string;
+};
 
 export const create_slider = ({
   prev_btn,
@@ -6,7 +14,7 @@ export const create_slider = ({
   slider,
   viewport,
   cardSelector,
-}) => {
+}: CreateSliderProps) => {
   const { slider_overflow, step_width } = calculate_metrics({
     slider,
     viewport,
@@ -17,21 +25,15 @@ export const create_slider = ({
 
   const moveLeft = () => {
     offset += step_width;
-    const remaining_overflow = slider_overflow + offset;
-    if (remaining_overflow > slider_overflow) {
-      slider.style.transform = `none`;
-      offset = 0;
-      return;
+    if (offset > 0) {
+      offset = -slider_overflow;
     }
     slider.style.transform = `translateX(${offset}px)`;
   };
   const moveRight = () => {
     offset -= step_width;
-    const remaining_overflow = slider_overflow + offset;
-    if (remaining_overflow < 0) {
-      slider.style.transform = `translateX(${-slider_overflow}px)`;
-      offset -= remaining_overflow;
-      return;
+    if (offset < -slider_overflow) {
+      offset = 0;
     }
     slider.style.transform = `translateX(${offset}px)`;
   };

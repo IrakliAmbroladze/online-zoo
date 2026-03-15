@@ -12,6 +12,7 @@ export default async function App() {
   const right_arrow = document.getElementById("sldr_right_arr");
   const slider_container = document.getElementById("slider");
   const viewport = container.offsetWidth - 80; //deducting padding
+  if (!left_arrow || !right_arrow || !slider_container) return;
 
   create_slider({
     prev_btn: left_arrow,
