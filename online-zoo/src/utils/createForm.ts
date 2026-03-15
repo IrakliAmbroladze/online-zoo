@@ -8,11 +8,13 @@ type CreateFormProps = {
   formNodeId: string | null;
   title?: string;
   inputs: Input[];
+  endpointURL: string;
 };
 export const createForm = ({
   formNodeId,
   title = "Form",
   inputs,
+  endpointURL,
 }: CreateFormProps): void => {
   if (!formNodeId) return;
   const elForm = document.getElementById(formNodeId);
@@ -34,4 +36,6 @@ export const createForm = ({
   btnSubmit.classList.add("btn");
   btnSubmit.classList.add("btn--orange");
   form.appendChild(btnSubmit);
+  form.action = endpointURL;
+  form.method = "POST";
 };

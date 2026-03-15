@@ -31,6 +31,8 @@ export default async function App() {
       formNodeId: "form-registration",
       title: "Registration",
       inputs: REGISTRATION_INPUTS,
+      endpointURL:
+        "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/auth/register",
     });
   }
 }
