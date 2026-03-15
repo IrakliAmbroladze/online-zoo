@@ -1,3 +1,5 @@
+import { getFormFieldValue } from "./getFormFieldValue";
+
 type Input = {
   type: string;
   placeholder?: string;
@@ -38,6 +40,6 @@ export const createForm = ({
   form.appendChild(btnSubmit);
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    console.log(e.target);
+    console.log(getFormFieldValue({ form, name: "email" }));
   });
 };
