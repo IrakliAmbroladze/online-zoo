@@ -235,7 +235,9 @@
       .slider-pets-in-zoo {
         --card-width: 495px;
         display: grid;
-        grid-template-columns: var(--card-width) var(--card-width) var(--card-width) var(--card-width);
+        grid-template-rows: repeat(2, 715px);
+        grid-auto-columns: var(--card-width);
+        grid-auto-flow: column;
         transition: transform 700ms ease;
 
         .animals-card {
