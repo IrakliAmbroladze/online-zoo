@@ -2,6 +2,7 @@ import { Feedbacks } from "./components/Feedbacks";
 import { Header } from "./components/Header";
 import { MeetPets } from "./components/MeetPets";
 import { REGISTRATION_INPUTS } from "./constants/registration";
+import { SIGN_IN_INPUTS } from "./constants/signin";
 import { createForm } from "./utils/createForm";
 import { create_slider } from "./utils/slider/create_slider";
 
@@ -37,6 +38,16 @@ export default async function App() {
       inputs: REGISTRATION_INPUTS,
       endpointURL:
         "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/auth/register",
+    });
+  }
+
+  if (page === "page-sign-in") {
+    createForm({
+      formNodeId: "form-sign-in",
+      title: "Sign In",
+      inputs: SIGN_IN_INPUTS,
+      endpointURL:
+        "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/auth/login",
     });
   }
 }
