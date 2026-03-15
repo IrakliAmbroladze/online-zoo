@@ -1,3 +1,8 @@
-export const createForm = () => {
-  console.log("this is a function for creating forms");
+type CreateFormProps = {
+  formNodeId: string | undefined;
+};
+export const createForm = ({ formNodeId }: CreateFormProps): void => {
+  if (!formNodeId) return;
+  const elForm = document.getElementById(formNodeId);
+  console.log(elForm);
 };
