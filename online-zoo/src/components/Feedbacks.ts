@@ -13,7 +13,6 @@ export const Feedbacks = async (): Promise<void> => {
 
   try {
     const feedbacks: Feedback[] = await fetchFeedbacks();
-    console.log(feedbacks);
 
     container.innerHTML = "";
 

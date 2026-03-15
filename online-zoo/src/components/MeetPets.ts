@@ -14,7 +14,6 @@ export const MeetPets = async (): Promise<void> => {
 
   try {
     const pets: Pet[] = await fetchPets();
-    console.log(pets);
 
     container.innerHTML = "";
 

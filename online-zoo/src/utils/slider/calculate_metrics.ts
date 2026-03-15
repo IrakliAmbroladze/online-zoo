@@ -12,7 +12,7 @@ export const calculate_metrics = ({
   const slider_styles: CSSStyleDeclaration = window.getComputedStyle(slider);
   const gap: number = parseFloat(slider_styles.getPropertyValue("gap"));
   const card = slider.querySelector<HTMLElement>(cardSelector);
-  if (!card) throw new Error(`No card found for selector: ${cardSelector}`);
+  if (!card) return null;
   const card_width: number = card.offsetWidth;
   const step_width: number = card_width + gap;
 

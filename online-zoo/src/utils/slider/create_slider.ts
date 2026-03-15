@@ -15,11 +15,9 @@ export const create_slider = ({
   viewport,
   cardSelector,
 }: CreateSliderProps) => {
-  const { slider_overflow, step_width } = calculate_metrics({
-    slider,
-    viewport,
-    cardSelector,
-  });
+  const metrics = calculate_metrics({ slider, viewport, cardSelector });
+  if (!metrics) return;
+  const { slider_overflow, step_width } = metrics;
 
   let offset = 0;
 
