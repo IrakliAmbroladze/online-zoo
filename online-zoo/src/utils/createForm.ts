@@ -90,7 +90,7 @@ export const createForm = ({
   const btnSubmit = document.createElement("button");
   btnSubmit.type = "submit";
   btnSubmit.textContent = "submit";
-  btnSubmit.classList.add("btnSubmit");
+  btnSubmit.classList.add("btn-submit");
   btnSubmit.classList.add("btn");
   btnSubmit.classList.add("btn--orange");
   form.appendChild(btnSubmit);
