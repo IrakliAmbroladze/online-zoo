@@ -68,6 +68,7 @@ export const createForm = ({
     input.addEventListener("blur", () => {
       if (!cfg.validationRules || cfg.validationRules.length === 0) {
         validityMap[cfg.name] = input.value.trim().length > 0;
+        updateSubmitButton();
         return;
       }
 
@@ -84,6 +85,7 @@ export const createForm = ({
         errorMsg.textContent = "";
         validityMap[cfg.name] = true;
       }
+      updateSubmitButton();
     });
   });
 
@@ -96,15 +98,21 @@ export const createForm = ({
   form.appendChild(btnSubmit);
 
   const serverErr = document.createElement("p");
+  serverErr.classList.add("form-server-error");
   form.appendChild(serverErr);
+
+  function updateSubmitButton() {
+    const allValid = Object.values(validityMap).every(Boolean);
+    btnSubmit.disabled = !allValid;
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    serverErr.textContent = "";
     const body: Record<string, string> = {};
     inputs.forEach((input) => {
       body[input.name] = getFormFieldValue({ form, name: input.name });
     });
-    console.log("body is: ", body);
     try {
       const response = await fetch(endpointURL, {
         method: "POST",
@@ -114,7 +122,7 @@ export const createForm = ({
         body: JSON.stringify(body),
       });
       if (!response.ok) {
-        let message = "not able to register";
+        let message = "Incorrect login or password";
         try {
           const data = await response.json();
           if (data?.error) {
