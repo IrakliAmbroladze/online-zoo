@@ -1,7 +1,9 @@
 import { fetchCameras } from "../lib/fetchCameras";
 import type { Camera } from "../types/Camera";
+import { Cameras } from "./Cameras";
 
 export default async function Zoos() {
+  Cameras();
   enum Numbers {
     zero = 1,
     one,
