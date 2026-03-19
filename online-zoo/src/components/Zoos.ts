@@ -16,7 +16,7 @@ export default async function Zoos() {
   console.log("number one is: ", Numbers.two);
   console.log("number one is: ", Numbers.three);
 
-  const container = document.getElementById("cameras-container");
+  const container = document.getElementById("cameras-pet-list");
   if (!container) return;
 
   container.innerHTML = `
