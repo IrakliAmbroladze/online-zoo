@@ -11,6 +11,9 @@
 
 
     .cameras {
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
       position: absolute;
       width: 300px;
       height: 846px;
@@ -43,6 +46,10 @@
           @include flex-row-center
         }
       }
+    }
+
+    .cameras::-webkit-scrollbar {
+      display: none;
     }
 
     .shrinked {
