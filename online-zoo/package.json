@@ -1,12 +1,12 @@
 {
   "name": "online-zoo",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "lint": "eslint .",
+    "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],
